@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bahg5rivlu4j0"]
+
+[node name="powerup_spawn" type="Node2D"]
