@@ -17,3 +17,7 @@ The game works by having the barrel and base turn on their own, allowing movemen
 `I and K` to move forward and back  
 `U and O` to turn barrel  
 `P` to fire  
+
+## How to play
+
+Kill the enemy tank by shooting it with bullets until it dies. I probably didn't need to explain that to you but it's here if you need it 🙃
