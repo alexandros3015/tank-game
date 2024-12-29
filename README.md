@@ -2,7 +2,10 @@
 
 The one and probably not only **tank game.**
 
-The game works by having the barrel and base turn on their own, allowing movement and aiming to be separate
+The game works by having the barrel and base turn on their own, allowing movement and aiming to be separate  
+  
+These controls may feel wonky at first but...  
+Yeah no they always feel wonky
 
 ## Player 1
 
