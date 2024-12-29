@@ -1,4 +1,4 @@
-# tank-game
+# Tank Game
 
 The one and probably not only **tank game.**
 
@@ -24,3 +24,10 @@ Yeah no they always feel wonky
 ## How to play
 
 Kill the enemy tank by shooting it with bullets until it dies. I probably didn't need to explain that to you but it's here if you need it 🙃
+
+## Requirements
+
+- A working computer (important that it does work)
+- A friend (we all know you have none)
+- God level reflexes
+- Why are you playing this random ass game 
