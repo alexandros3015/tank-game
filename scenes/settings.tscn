@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo7186ed1nxpl"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_g8rvs"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_g8rvs")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="resolution" type="Label" parent="."]
+layout_mode = 1
+offset_right = 173.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "Resolution:"
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -53.0
+offset_right = 82.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="fullscreen" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 69.0
+offset_right = 231.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 32
+button_pressed = true
+text = "Fullscreen"
+metadata/_edit_use_anchors_ = true
+
+[node name="resolution_option" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 20.0
+offset_right = 296.0
+offset_bottom = 51.0
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="item_selected" from="resolution_option" to="." method="_on_resolution_option_item_selected"]
