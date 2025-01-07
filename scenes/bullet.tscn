@@ -20,5 +20,9 @@ shape = SubResource("CircleShape2D_dqwh1")
 wait_time = 10.0
 autostart = true
 
+[node name="owie_timer" type="Timer" parent="."]
+wait_time = 0.7
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="kill_bullet_timer" to="." method="_on_kill_bullet_timer_timeout"]
+[connection signal="timeout" from="owie_timer" to="." method="_on_owie_timer_timeout"]
