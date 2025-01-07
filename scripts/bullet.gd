@@ -33,6 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 func owie() -> void:
 	doing_owie = true
 	$circle.scale = Vector2(.2, .2)
+	rotation_degrees = 0
 	$circle.texture = boomsprite
 	$owie_timer.start()
 
