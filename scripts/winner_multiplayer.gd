@@ -30,8 +30,4 @@ func disable_gameplay():
 		node.set_physics_process(false)
 
 func _on_timer_timeout() -> void:
-	
-	if OS.has_feature("dedicated_server"):
-		get_tree().reload_current_scene()
-	else:
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

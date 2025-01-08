@@ -3,7 +3,6 @@ extends Node2D
 var players = {}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	
