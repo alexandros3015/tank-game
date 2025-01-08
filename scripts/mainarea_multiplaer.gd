@@ -9,7 +9,7 @@ func _ready() -> void:
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	
 	
-	if multiplayer.is_server():
+	if multiplayer.is_server() and !OS.has_feature("dedicated_server"):
 		_on_peer_connected()
 	
 	
