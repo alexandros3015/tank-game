@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://de7kywohp4pur"]
+
+[ext_resource type="Script" path="res://scripts/tank_multiplaeer.gd" id="1_21urb"]
+[ext_resource type="Texture2D" uid="uid://dwm57ny557t0t" path="res://icon.svg" id="2_j5g88"]
+[ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="3_1i2xj"]
+[ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="4_gwlvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su32n"]
+size = Vector2(97, 93)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_y8owc"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Base:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Spinny/Barrel:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Spinny:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:hp")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath(".:bullets")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
+[node name="tank1" type="CharacterBody2D" groups=["tank"]]
+script = ExtResource("1_21urb")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("2_j5g88")
+
+[node name="indicatortemp" type="Sprite2D" parent="Base"]
+position = Vector2(59.5, 4.25)
+scale = Vector2(0.01625, 0.046875)
+texture = ExtResource("3_1i2xj")
+
+[node name="Spinny" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+rotation = -1.57615
+scale = Vector2(0.283073, 0.25651)
+texture = ExtResource("4_gwlvb")
+
+[node name="Barrel" type="Sprite2D" parent="Spinny"]
+position = Vector2(0, 268.995)
+scale = Vector2(0.0804968, 0.543858)
+texture = ExtResource("3_1i2xj")
+
+[node name="bullet_spawn_thing" type="Node2D" parent="Spinny/Barrel"]
+position = Vector2(0, 465.934)
+rotation = 1.5708
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_su32n")
+
+[node name="bullet_cooldown" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="fire_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_y8owc")
+
+[connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]
+[connection signal="timeout" from="fire_cooldown" to="." method="_on_fire_cooldown_timeout"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://co4f5qq3u0sc3"]
+
+[ext_resource type="Script" path="res://scripts/bullet_multiplaer.gd" id="1_gmwti"]
+[ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="2_41erk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqwh1"]
+radius = 9.05539
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_slhnm"]
+properties/0/path = NodePath(".:rotation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_gmwti")
+
+[node name="circle" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_41erk")
+
+[node name="hurtbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dqwh1")
+
+[node name="kill_bullet_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="owie_timer" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_slhnm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="kill_bullet_timer" to="." method="_on_kill_bullet_timer_timeout"]
+[connection signal="timeout" from="owie_timer" to="." method="_on_owie_timer_timeout"]

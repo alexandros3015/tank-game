@@ -1,40 +1,100 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh8ey72l7dnj5"]
+[gd_scene load_steps=3 format=3 uid="uid://dh8ey72l7dnj5"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6wmml"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4844f"]
+bg_color = Color(0.180005, 0.180005, 0.180005, 1)
+
 [node name="main_menu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4844f")
 script = ExtResource("1_6wmml")
 
 [node name="title" type="Label" parent="."]
 layout_mode = 1
-offset_left = 564.0
-offset_top = -6.0
-offset_right = 1240.0
-offset_bottom = 169.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.0
+offset_right = 338.0
+offset_bottom = 175.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 128
 text = "Tank game"
-metadata/_edit_use_anchors_ = true
 
 [node name="start" type="Button" parent="."]
 layout_mode = 1
-offset_left = 746.0
-offset_top = 498.0
-offset_right = 1103.0
-offset_bottom = 594.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.5
+offset_top = -48.0
+offset_right = 178.5
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Start Game"
-metadata/_edit_use_anchors_ = true
 
 [node name="close" type="Button" parent="."]
 layout_mode = 1
-offset_left = 1552.0
-offset_top = 982.0
-offset_right = 1924.0
-offset_bottom = 1078.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -96.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "Close Game"
 
+[node name="host" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.922917
+anchor_top = 0.433333
+anchor_right = 1.00156
+anchor_bottom = 0.522222
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Host"
+metadata/_edit_use_anchors_ = true
+
+[node name="connect" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.864062
+anchor_top = 0.544444
+anchor_right = 1.00104
+anchor_bottom = 0.633333
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Connect"
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+anchor_left = 0.870833
+anchor_top = 0.65
+anchor_right = 0.997917
+anchor_bottom = 0.738889
+offset_bottom = 6.10352e-05
+theme_override_font_sizes/font_size = 64
+text = "localhost"
+placeholder_text = "IP"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="connect" to="." method="_on_connect_pressed"]
