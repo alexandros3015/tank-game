@@ -15,9 +15,9 @@ func _process(delta: float) -> void:
 	for i in range(0, tanks.size()):
 		var tank = tanks[i]
 		if i % 2: 
-			$p2info.text += "Tank %s\nHealth:%s\nBullets:%s" % [i, tank.hp, tank.bullets]
+			$p2info.text += "Tank: %s\nHealth: %s\nBullets: %s" % [i+1, tank.hp, tank.bullets]
 		else:
-			$p1info.text += "Tank %s\nHealth:%s\nBullets:%s" % [i, tank.hp, tank.bullets]
+			$p1info.text += "Tank: %s\nHealth: %s\nBullets: %s" % [i+1, tank.hp, tank.bullets]
 		
 	
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://0tndp7tgw7ms"]
 
 [ext_resource type="Script" path="res://scripts/mainarea_multiplaer.gd" id="1_835vx"]
-[ext_resource type="Script" path="res://scenes/hud_multiplayer.gd" id="2_6645h"]
+[ext_resource type="Script" path="res://scripts/hud_multiplayer.gd" id="2_6645h"]
 [ext_resource type="Script" path="res://scripts/winner_multiplayer.gd" id="3_lqntj"]
 [ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="5_sg0ee"]
 [ext_resource type="PackedScene" uid="uid://bahg5rivlu4j0" path="res://scenes/powerup_spawn.tscn" id="6_r85qe"]

@@ -4,10 +4,9 @@ var peer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	multiplayer.multiplayer_peer = null
-	
 	if OS.has_feature("dedicated_server"):
-		host()
+		get_tree().change_scene_to_file("res://scenes/multiplayer_game_manager.tscn")
+	multiplayer.multiplayer_peer = null
 	
 	multiplayer.connected_to_server.connect(_server_connected)
 	
@@ -17,9 +16,8 @@ func _process(delta: float) -> void:
 
 func host() -> void:
 	peer = ENetMultiplayerPeer.new()
-	peer.create_server(6969, 2)
+	peer.create_client(Global.mainip, 6969)
 	multiplayer.multiplayer_peer = peer
-	get_tree().change_scene_to_file.call_deferred("res://scenes/mainareaMULTIPLAER.tscn")
 
 func join(ip: String) -> void:
 	peer = ENetMultiplayerPeer.new()

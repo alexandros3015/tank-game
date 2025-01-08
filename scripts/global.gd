@@ -1,5 +1,9 @@
 extends Node
 
+var mainip = "localhost"
+
+var altconnect = false
+
 var bullets1 = 10
 var bullets2 = 10
 
