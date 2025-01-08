@@ -8,7 +8,9 @@ func _ready() -> void:
 	
 	if OS.has_feature("dedicated_server"):
 		host()
-
+	
+	multiplayer.connected_to_server.connect(_server_connected)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -23,7 +25,7 @@ func join(ip: String) -> void:
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(ip, 6969)
 	multiplayer.multiplayer_peer = peer
-	get_tree().change_scene_to_file.call_deferred("res://scenes/mainareaMULTIPLAER.tscn")
+	
 
 
 func _on_start_pressed() -> void:
@@ -44,3 +46,6 @@ func _on_connect_pressed() -> void:
 
 func _on_host_pressed() -> void:
 	host()
+
+func _server_connected() -> void:
+	get_tree().change_scene_to_file.call_deferred("res://scenes/mainareaMULTIPLAER.tscn")
