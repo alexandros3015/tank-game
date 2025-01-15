@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cih3vmsj3qpic"]
 
-[ext_resource type="Script" path="res://scripts/lobby.gd" id="1_1ps56"]
+[ext_resource type="Script" path="res://scripts/multiplayer/lobby.gd" id="1_p20nm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evk6h"]
 bg_color = Color(0.129558, 0.129559, 0.129558, 1)
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_evk6h")
-script = ExtResource("1_1ps56")
+script = ExtResource("1_p20nm")
 
 [node name="lobbytext" type="Label" parent="."]
 layout_mode = 1

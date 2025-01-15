@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpd5f7k7s14ws"]
 
-[ext_resource type="Script" path="res://scripts/tank_2.gd" id="1_cnuw8"]
+[ext_resource type="Script" path="res://scripts/singleplayer/tank_2.gd" id="1_cnuw8"]
 [ext_resource type="Texture2D" uid="uid://dwm57ny557t0t" path="res://icon.svg" id="2_aqoq2"]
 [ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="3_51do8"]
 [ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="4_bf3uf"]
