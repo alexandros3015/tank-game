@@ -18,7 +18,7 @@ func _ready() -> void:
 		if args.has("max_clients"):
 			max_clients = args["max_clients"]
 		print("hosting on port ", port)
-		host(port)
+		host(port, max_clients)
 	
 	multiplayer.connected_to_server.connect(_server_connected)
 	
@@ -33,9 +33,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 	
 
-func host(port = 6969) -> void:
+func host(port = 6969, max_clients = 2) -> void:
 	peer = ENetMultiplayerPeer.new()
-	peer.create_server(port, 2)
+	peer.create_server(port, max_clients)
 	multiplayer.multiplayer_peer = peer
 	get_tree().change_scene_to_file.call_deferred("res://scenes/mainareaMULTIPLAER.tscn")
 
