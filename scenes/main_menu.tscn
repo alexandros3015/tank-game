@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh8ey72l7dnj5"]
+[gd_scene load_steps=4 format=3 uid="uid://dh8ey72l7dnj5"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6wmml"]
+[ext_resource type="PackedScene" uid="uid://dkgfasnrjcoch" path="res://scenes/server_list.tscn" id="2_kywlx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4844f"]
 bg_color = Color(0.180005, 0.180005, 0.180005, 1)
@@ -82,7 +83,7 @@ theme_override_font_sizes/font_size = 64
 text = "Connect"
 metadata/_edit_use_anchors_ = true
 
-[node name="ip" type="LineEdit" parent="."]
+[node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
 anchor_left = 0.870833
 anchor_top = 0.65
@@ -94,19 +95,17 @@ text = "localhost"
 placeholder_text = "IP"
 metadata/_edit_use_anchors_ = true
 
-[node name="name" type="LineEdit" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -48.0
-offset_right = 244.0
-offset_bottom = 48.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-placeholder_text = "Name"
+[node name="ServerList" parent="." instance=ExtResource("2_kywlx")]
+layout_mode = 0
+offset_left = 1093.0
+offset_top = 604.0
+offset_right = 1636.0
+offset_bottom = 880.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect" to="." method="_on_connect_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

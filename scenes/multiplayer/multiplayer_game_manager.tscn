@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://drxf6rdpgx25e"]
-
-[ext_resource type="Script" path="res://scripts/multiplayer/multiplayer_game_manager.gd" id="1_vfq05"]
-
-[node name="multiplayer_game_manager" type="Node"]
-script = ExtResource("1_vfq05")

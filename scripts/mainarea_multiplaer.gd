@@ -36,15 +36,15 @@ func _on_peer_connected(id: int = 1):
 	
 
 func _on_peer_disconnected(id: int = 1):
-	
-	
 	if multiplayer.is_server():
 		players.erase(id)
 		get_node(str(id)).queue_free()
+		
+		if players.size() == 0:
+			get_tree().quit()
+		
 	elif id == 1: 
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-		
-		
 
 func _exit_tree() -> void:
 	multiplayer.multiplayer_peer.close()

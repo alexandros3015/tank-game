@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkgfasnrjcoch"]
+
+[ext_resource type="Script" path="res://scripts/server_list.gd" id="1_2gh13"]
+
+[node name="ServerList" type="ItemList"]
+offset_right = 543.0
+offset_bottom = 276.0
+script = ExtResource("1_2gh13")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="item_clicked" from="." to="." method="_on_item_clicked"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

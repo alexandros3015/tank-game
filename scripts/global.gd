@@ -1,8 +1,6 @@
 extends Node
 
-var mainip = "localhost"
-
-var altconnect = false
+const SERVER_IP = "localhost"
 
 var bullets1 = 10
 var bullets2 = 10

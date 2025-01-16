@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://co4f5qq3u0sc3"]
 
-[ext_resource type="Script" path="res://scripts/multiplayer/bullet_multiplaer.gd" id="1_vyiiq"]
-[ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="2_igf7t"]
+[ext_resource type="Script" path="res://scripts/bullet_multiplaer.gd" id="1_gmwti"]
+[ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="2_41erk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqwh1"]
 radius = 9.05539
@@ -15,11 +15,11 @@ properties/1/spawn = true
 properties/1/replication_mode = 1
 
 [node name="bullet" type="Area2D"]
-script = ExtResource("1_vyiiq")
+script = ExtResource("1_gmwti")
 
 [node name="circle" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_igf7t")
+texture = ExtResource("2_41erk")
 
 [node name="hurtbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dqwh1")

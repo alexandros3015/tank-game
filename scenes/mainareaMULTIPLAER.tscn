@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://0tndp7tgw7ms"]
 
-[ext_resource type="Script" path="res://scripts/multiplayer/mainarea_multiplaer.gd" id="1_ssvjn"]
-[ext_resource type="Script" path="res://scripts/multiplayer/hud_multiplayer.gd" id="2_l1gg5"]
-[ext_resource type="Script" path="res://scripts/multiplayer/winner_multiplayer.gd" id="3_yrnj2"]
-[ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="4_v4qdt"]
-[ext_resource type="PackedScene" uid="uid://bahg5rivlu4j0" path="res://scenes/powerup_spawn.tscn" id="5_ua4y3"]
+[ext_resource type="Script" path="res://scripts/mainarea_multiplaer.gd" id="1_835vx"]
+[ext_resource type="Script" path="res://scenes/hud_multiplayer.gd" id="2_6645h"]
+[ext_resource type="Script" path="res://scripts/winner_multiplayer.gd" id="3_lqntj"]
+[ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="5_sg0ee"]
+[ext_resource type="PackedScene" uid="uid://bahg5rivlu4j0" path="res://scenes/powerup_spawn.tscn" id="6_r85qe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hx23"]
 size = Vector2(753, 190)
@@ -25,12 +25,12 @@ distance = -542.168
 distance = -540.0
 
 [node name="mainarea" type="Node2D"]
-script = ExtResource("1_ssvjn")
+script = ExtResource("1_835vx")
 
 [node name="camera" type="Camera2D" parent="."]
 
 [node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("2_l1gg5")
+script = ExtResource("2_6645h")
 
 [node name="p1info" type="Label" parent="HUD"]
 offset_right = 40.0
@@ -79,7 +79,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
 text = "PLAYER 1 WON!!!"
-script = ExtResource("3_yrnj2")
+script = ExtResource("3_lqntj")
 
 [node name="timer" type="Timer" parent="HUD/winner"]
 wait_time = 3.0
@@ -93,7 +93,7 @@ scale = Vector2(0.52, 0.52)
 [node name="seewall" type="Sprite2D" parent="wall1"]
 position = Vector2(-298, -415)
 scale = Vector2(1, 0.265)
-texture = ExtResource("4_v4qdt")
+texture = ExtResource("5_sg0ee")
 
 [node name="hitbox" type="CollisionShape2D" parent="wall1"]
 position = Vector2(-297, -416)
@@ -106,7 +106,7 @@ scale = Vector2(0.52, 0.52)
 [node name="seewall" type="Sprite2D" parent="wall2"]
 position = Vector2(-298, -415)
 scale = Vector2(1, 0.265)
-texture = ExtResource("4_v4qdt")
+texture = ExtResource("5_sg0ee")
 
 [node name="hitbox" type="CollisionShape2D" parent="wall2"]
 position = Vector2(-297, -416)
@@ -119,7 +119,7 @@ scale = Vector2(0.52, 0.52)
 [node name="seewall" type="Sprite2D" parent="wall3"]
 position = Vector2(-298, -415)
 scale = Vector2(1, 0.265)
-texture = ExtResource("4_v4qdt")
+texture = ExtResource("5_sg0ee")
 
 [node name="hitbox" type="CollisionShape2D" parent="wall3"]
 position = Vector2(-297, -416)
@@ -132,7 +132,7 @@ scale = Vector2(0.52, 0.52)
 [node name="seewall" type="Sprite2D" parent="wall4"]
 position = Vector2(-298, -415)
 scale = Vector2(1, 0.265)
-texture = ExtResource("4_v4qdt")
+texture = ExtResource("5_sg0ee")
 
 [node name="hitbox" type="CollisionShape2D" parent="wall4"]
 position = Vector2(-297, -416)
@@ -145,7 +145,7 @@ scale = Vector2(0.52, 0.52)
 [node name="seewall" type="Sprite2D" parent="wall5"]
 position = Vector2(-298, -415)
 scale = Vector2(1, 0.265)
-texture = ExtResource("4_v4qdt")
+texture = ExtResource("5_sg0ee")
 
 [node name="hitbox" type="CollisionShape2D" parent="wall5"]
 position = Vector2(-297, -416)
@@ -159,7 +159,7 @@ scale = Vector2(0.52, 0.52)
 [node name="seewall" type="Sprite2D" parent="wall6"]
 position = Vector2(-298, -415)
 scale = Vector2(1, 0.265)
-texture = ExtResource("4_v4qdt")
+texture = ExtResource("5_sg0ee")
 
 [node name="hitbox" type="CollisionShape2D" parent="wall6"]
 position = Vector2(-297, -416)
@@ -186,25 +186,26 @@ shape = SubResource("WorldBoundaryShape2D_etye6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border4"]
 shape = SubResource("WorldBoundaryShape2D_a60i6")
 
-[node name="powerup_spawn1" parent="." groups=["powerup_spawn"] instance=ExtResource("5_ua4y3")]
+[node name="powerup_spawn1" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
 position = Vector2(-872, -465)
 
-[node name="powerup_spawn2" parent="." groups=["powerup_spawn"] instance=ExtResource("5_ua4y3")]
+[node name="powerup_spawn2" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
 position = Vector2(-884, 436)
 
-[node name="powerup_spawn3" parent="." groups=["powerup_spawn"] instance=ExtResource("5_ua4y3")]
+[node name="powerup_spawn3" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
 position = Vector2(847, -500)
 
-[node name="powerup_spawn4" parent="." groups=["powerup_spawn"] instance=ExtResource("5_ua4y3")]
+[node name="powerup_spawn4" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
 position = Vector2(844, 464)
 
-[node name="powerup_spawn5" parent="." groups=["powerup_spawn"] instance=ExtResource("5_ua4y3")]
+[node name="powerup_spawn5" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
 position = Vector2(230, -227)
 
-[node name="powerup_spawn6" parent="." groups=["powerup_spawn"] instance=ExtResource("5_ua4y3")]
+[node name="powerup_spawn6" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
 position = Vector2(-5, 290)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/tank_multiplaeer.tscn", "res://scenes/bullet_multiplaer.tscn")
 spawn_path = NodePath("..")
 
 [connection signal="pressed" from="HUD/GETOUT" to="HUD" method="_on_getout_pressed"]
