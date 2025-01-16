@@ -18,7 +18,10 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(uid)
 
 func _ready() -> void:
-	pass
+	if !is_multiplayer_authority():
+		return
+	
+	$username.text = Global.username
 
 func _physics_process(delta: float) -> void:
 	

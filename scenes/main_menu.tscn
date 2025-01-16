@@ -121,3 +121,4 @@ placeholder_text = "Username"
 [connection signal="pressed" from="host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect" to="." method="_on_connect_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="text_changed" from="username" to="." method="_on_username_text_changed"]

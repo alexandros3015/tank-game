@@ -18,9 +18,16 @@ func _ready() -> void:
 	
 	multiplayer.connected_to_server.connect(_server_connected)
 	
+	var file = FileAccess.open("user:///username.txt", FileAccess.READ)
+	
+	if file:
+		Global.username = file.get_as_text()
+		$username.text = file.get_as_text()
+		
+		file.close()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
 
 func host(port = 6969) -> void:
 	peer = ENetMultiplayerPeer.new()
@@ -34,6 +41,7 @@ func host_but_like_not():
 		name = OS.get_environment("USERNAME")
 	else:
 		name = $username.text
+		
 	
 	$HTTPRequest.request("http://%s:8080/new" % [Global.SERVER_IP], [], HTTPClient.METHOD_POST, JSON.stringify({
 		"name": name.strip_edges() + "'s Server",
@@ -118,3 +126,12 @@ func get_cmd_args() -> Dictionary:
 			i += 1
 			
 	return result
+
+
+func _on_username_text_changed(new_text: String) -> void:
+	var file = FileAccess.open("user:///username.txt", FileAccess.WRITE)
+	
+	file.store_string($username.text)
+	file.close()
+	
+	Global.username = $username.text
