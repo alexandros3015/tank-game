@@ -13,6 +13,10 @@ func _ready() -> void:
 		var port = 6969
 		if args.has("port"):
 			port = args["port"]
+		
+		var max_clients = 2
+		if args.has("max_clients"):
+			max_clients = args["max_clients"]
 		print("hosting on port ", port)
 		host(port)
 	
