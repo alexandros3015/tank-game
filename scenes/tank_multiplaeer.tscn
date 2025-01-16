@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://de7kywohp4pur"]
+[gd_scene load_steps=11 format=3 uid="uid://de7kywohp4pur"]
 
 [ext_resource type="Script" path="res://scripts/tank_multiplaeer.gd" id="1_21urb"]
 [ext_resource type="Texture2D" uid="uid://dwm57ny557t0t" path="res://icon.svg" id="2_j5g88"]
@@ -30,6 +30,22 @@ properties/5/replication_mode = 1
 properties/6/path = NodePath("username:text")
 properties/6/spawn = true
 properties/6/replication_mode = 1
+properties/7/path = NodePath("hp:value")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+properties/8/path = NodePath("bullets:value")
+properties/8/spawn = true
+properties/8/replication_mode = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ipe4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thahe"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqakg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7y2q"]
+bg_color = Color(0.709804, 0.65098, 0.258824, 1)
 
 [node name="tank1" type="CharacterBody2D" groups=["tank"]]
 script = ExtResource("1_21urb")
@@ -65,10 +81,10 @@ shape = SubResource("RectangleShape2D_su32n")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -48.5
-offset_top = -123.0
-offset_right = 48.5
-offset_bottom = -78.0
+offset_left = -48.0
+offset_top = -159.0
+offset_right = 49.0
+offset_bottom = -114.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
@@ -82,6 +98,38 @@ wait_time = 0.5
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_y8owc")
+
+[node name="hp" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = -96.0
+offset_right = 54.0
+offset_bottom = -84.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_7ipe4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_thahe")
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="bullets" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = -81.0
+offset_right = 54.0
+offset_bottom = -69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_eqakg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r7y2q")
+max_value = 20.0
+value = 20.0
+show_percentage = false
 
 [connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]
 [connection signal="timeout" from="fire_cooldown" to="." method="_on_fire_cooldown_timeout"]

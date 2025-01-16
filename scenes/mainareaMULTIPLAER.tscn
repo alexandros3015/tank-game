@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://0tndp7tgw7ms"]
+[gd_scene load_steps=10 format=3 uid="uid://0tndp7tgw7ms"]
 
 [ext_resource type="Script" path="res://scripts/mainarea_multiplaer.gd" id="1_835vx"]
 [ext_resource type="Script" path="res://scripts/hud_multiplayer.gd" id="2_6645h"]
 [ext_resource type="Script" path="res://scripts/winner_multiplayer.gd" id="3_lqntj"]
 [ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="5_sg0ee"]
-[ext_resource type="PackedScene" uid="uid://bahg5rivlu4j0" path="res://scenes/powerup_spawn.tscn" id="6_r85qe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hx23"]
 size = Vector2(753, 190)
@@ -31,23 +30,6 @@ script = ExtResource("1_835vx")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("2_6645h")
-
-[node name="p1info" type="Label" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 32
-text = "Bullets: "
-metadata/_edit_use_anchors_ = true
-
-[node name="p2info" type="Label" parent="HUD"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 32
-metadata/_edit_use_anchors_ = true
 
 [node name="GETOUT" type="Button" parent="HUD"]
 anchors_preset = 6
@@ -186,27 +168,21 @@ shape = SubResource("WorldBoundaryShape2D_etye6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border4"]
 shape = SubResource("WorldBoundaryShape2D_a60i6")
 
-[node name="powerup_spawn1" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
-position = Vector2(-872, -465)
-
-[node name="powerup_spawn2" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
-position = Vector2(-884, 436)
-
-[node name="powerup_spawn3" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
-position = Vector2(847, -500)
-
-[node name="powerup_spawn4" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
-position = Vector2(844, 464)
-
-[node name="powerup_spawn5" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
-position = Vector2(230, -227)
-
-[node name="powerup_spawn6" parent="." groups=["powerup_spawn"] instance=ExtResource("6_r85qe")]
-position = Vector2(-5, 290)
-
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/tank_multiplaeer.tscn", "res://scenes/bullet_multiplaer.tscn")
 spawn_path = NodePath("..")
+
+[node name="spawn_point1" type="Node2D" parent="."]
+position = Vector2(-542, -3)
+
+[node name="spawn_point2" type="Node2D" parent="."]
+position = Vector2(5, -418)
+
+[node name="spawn_point3" type="Node2D" parent="."]
+position = Vector2(360, 3)
+
+[node name="spawn_point4" type="Node2D" parent="."]
+position = Vector2(798, -205)
 
 [connection signal="pressed" from="HUD/GETOUT" to="HUD" method="_on_getout_pressed"]
 [connection signal="timeout" from="HUD/winner/timer" to="HUD/winner" method="_on_timer_timeout"]

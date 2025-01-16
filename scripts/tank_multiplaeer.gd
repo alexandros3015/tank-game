@@ -4,6 +4,8 @@ class_name MultiplayerTank
 @export var hp: int = 20
 @export var bullets: int = 10
 
+@onready var username: Label = $username
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -14,19 +16,16 @@ const BULLET = preload("res://scenes/bullet_multiplaer.tscn")
 func _enter_tree() -> void:
 	var uid = name.to_int()
 	
-
 	set_multiplayer_authority(uid)
 
 func _ready() -> void:
-	if !is_multiplayer_authority():
-		return
+	if !is_multiplayer_authority(): return
 	
-	$username.text = Global.username
+	username.text = Global.username
 
 func _physics_process(delta: float) -> void:
 	
-	if !is_multiplayer_authority():
-		return
+	if !is_multiplayer_authority(): return
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -60,6 +59,9 @@ func _physics_process(delta: float) -> void:
 			
 			print("Tank fired")
 	move_and_slide()
+	
+	$hp.value = hp
+	$bullets.value = bullets
 
 @rpc("any_peer", "call_local") 
 func spawn_bullet(position: Vector2, rotation: float):
@@ -84,3 +86,7 @@ func _on_bullet_cooldown_timeout() -> void:
 
 func _on_fire_cooldown_timeout() -> void:
 	canshoot = true
+
+@rpc("any_peer", "call_local")
+func server_set_position(given_position: Vector2) -> void:
+	position = given_position 

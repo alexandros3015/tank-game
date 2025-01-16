@@ -17,13 +17,20 @@ func win_process():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if !tstarted:
 		var tanks = get_tree().get_nodes_in_group("tank")
+		var alive_tanks = get_tree().get_nodes_in_group("tank")
 		for i in range(0, tanks.size()):
 			if tanks[i].hp <= 0:
-				text = "PLAYER " + str(i+1) + " DIEDD LMAOOOO!!!!"
-				win_process()
-
+				alive_tanks.remove_at(i)
+		
+		
+		
+		if alive_tanks.size() == 1 and tanks.size() > 1:
+			text = str(alive_tanks[0].username.text) + " WINS!!!"
+			
+			win_process()
 func disable_gameplay():
 	for node in get_tree().get_nodes_in_group("tank"):
 		node.set_process(false)

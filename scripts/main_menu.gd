@@ -36,16 +36,17 @@ func host(port = 6969) -> void:
 	get_tree().change_scene_to_file.call_deferred("res://scenes/mainareaMULTIPLAER.tscn")
 
 func host_but_like_not():
-	var name
+	var name: String
 	if $username.text == "":
 		name = OS.get_environment("USERNAME")
 	else:
 		name = $username.text
 		
+	var max_clients: int = $max_clients.value
 	
 	$HTTPRequest.request("http://%s:8080/new" % [Global.SERVER_IP], [], HTTPClient.METHOD_POST, JSON.stringify({
 		"name": name.strip_edges() + "'s Server",
-		"max_players": 2,
+		"max_players": max_clients,
 		"public": 1
 	}))
 
