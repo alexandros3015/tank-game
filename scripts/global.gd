@@ -1,6 +1,6 @@
 extends Node
 
-const SERVER_IP = "localhost"
+const SERVER_IP = "23.92.17.198"
 var username = ""
 
 var bullets1 = 10

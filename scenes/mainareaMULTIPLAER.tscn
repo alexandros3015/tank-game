@@ -67,6 +67,22 @@ script = ExtResource("3_lqntj")
 wait_time = 3.0
 one_shot = true
 
+[node name="ready" type="CheckBox" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -91.5
+offset_right = 203.0
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "Ready"
+
 [node name="wall1" type="StaticBody2D" parent="."]
 position = Vector2(-216, 154)
 rotation = 1.5708
@@ -184,5 +200,10 @@ position = Vector2(360, 3)
 [node name="spawn_point4" type="Node2D" parent="."]
 position = Vector2(798, -205)
 
+[node name="ready_timer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="pressed" from="HUD/GETOUT" to="HUD" method="_on_getout_pressed"]
 [connection signal="timeout" from="HUD/winner/timer" to="HUD/winner" method="_on_timer_timeout"]
+[connection signal="toggled" from="HUD/ready" to="." method="_on_ready_toggled"]
+[connection signal="timeout" from="ready_timer" to="." method="_on_ready_timer_timeout"]

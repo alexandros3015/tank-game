@@ -62,6 +62,12 @@ func _physics_process(delta: float) -> void:
 	
 	$hp.value = hp
 	$bullets.value = bullets
+	
+	if hp <= 0:
+		visible = false 
+		set_process(false)
+		set_physics_process(false)
+	
 
 @rpc("any_peer", "call_local") 
 func spawn_bullet(position: Vector2, rotation: float):

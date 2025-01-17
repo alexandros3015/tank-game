@@ -27,10 +27,8 @@ func _ready() -> void:
 	if file:
 		Global.username = file.get_as_text()
 		$username.text = file.get_as_text()
-		
 		file.close()
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 	
 
 func host(port = 6969, max_clients = 2) -> void:
