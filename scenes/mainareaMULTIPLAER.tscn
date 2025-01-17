@@ -202,6 +202,7 @@ position = Vector2(798, -205)
 
 [node name="ready_timer" type="Timer" parent="."]
 wait_time = 3.0
+one_shot = true
 
 [connection signal="pressed" from="HUD/GETOUT" to="HUD" method="_on_getout_pressed"]
 [connection signal="timeout" from="HUD/winner/timer" to="HUD/winner" method="_on_timer_timeout"]
