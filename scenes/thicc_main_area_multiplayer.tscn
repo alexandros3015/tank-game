@@ -1,0 +1,837 @@
+[gd_scene load_steps=7 format=3 uid="uid://bimy1g0hy6or6"]
+
+[ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="4_cuart"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hx23"]
+size = Vector2(753, 190)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7m7xx"]
+normal = Vector2(-0.999998, -0.00221483)
+distance = -961.636
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qnxca"]
+normal = Vector2(1, 0)
+distance = -9.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etye6"]
+normal = Vector2(-0.0112352, 0.999937)
+distance = -542.168
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a60i6"]
+distance = -540.0
+
+[node name="thicc_mainarea" type="Node2D"]
+
+[node name="obsticles" type="Node" parent="."]
+
+[node name="Q1" type="Node2D" parent="obsticles"]
+scale = Vector2(1, -1)
+
+[node name="wall1" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(259, 216)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall1"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall1"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall2" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(738, 207)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall2"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall2"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall14" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(2568, 862)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall14"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall14"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall15" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(2649, 283)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall15"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall15"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall3" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(945, 957)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall3"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall3"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall4" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(519, 751)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall4"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall4"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall9" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(1723, 934)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall9"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall9"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall10" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(1780, 266)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall10"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall10"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall5" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(391, 1162)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall5"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall5"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall6" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(1320, 617)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall6"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall6"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall7" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(1325, 1322)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall7"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall7"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall8" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(1301, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall8"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall8"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall11" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(2218, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall11"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall11"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall12" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(2218, 527)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall12"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall12"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall13" type="StaticBody2D" parent="obsticles/Q1"]
+position = Vector2(2218, 1215)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q1/wall13"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q1/wall13"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="spawn_point1" type="Node2D" parent="obsticles/Q1" groups=["spawn_point"]]
+position = Vector2(1282, 262)
+
+[node name="spawn_point2" type="Node2D" parent="obsticles/Q1" groups=["spawn_point"]]
+position = Vector2(488, 411)
+
+[node name="spawn_point3" type="Node2D" parent="obsticles/Q1" groups=["spawn_point"]]
+position = Vector2(1342, 967)
+
+[node name="spawn_point4" type="Node2D" parent="obsticles/Q1" groups=["spawn_point"]]
+position = Vector2(1740, 596)
+
+[node name="spawn_point5" type="Node2D" parent="obsticles/Q1" groups=["spawn_point"]]
+position = Vector2(2220, 279)
+
+[node name="spawn_point6" type="Node2D" parent="obsticles/Q1" groups=["spawn_point"]]
+position = Vector2(2191, 865)
+
+[node name="spawn_point7" type="Node2D" parent="obsticles/Q1" groups=["spawn_point"]]
+position = Vector2(1771, 1276)
+
+[node name="Q2" type="Node2D" parent="obsticles"]
+scale = Vector2(-1, -1)
+
+[node name="wall1" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(259, 216)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall1"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall1"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall2" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(738, 207)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall2"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall2"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall14" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(2568, 862)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall14"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall14"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall15" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(2649, 283)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall15"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall15"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall3" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(945, 957)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall3"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall3"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall4" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(519, 751)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall4"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall4"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall9" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(1723, 934)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall9"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall9"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall10" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(1780, 266)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall10"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall10"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall5" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(391, 1162)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall5"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall5"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall6" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(1320, 617)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall6"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall6"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall7" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(1325, 1322)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall7"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall7"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall8" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(1301, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall8"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall8"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall11" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(2218, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall11"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall11"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall12" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(2218, 527)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall12"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall12"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall13" type="StaticBody2D" parent="obsticles/Q2"]
+position = Vector2(2218, 1215)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q2/wall13"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q2/wall13"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="spawn_point1" type="Node2D" parent="obsticles/Q2" groups=["spawn_point"]]
+position = Vector2(1282, 262)
+
+[node name="spawn_point2" type="Node2D" parent="obsticles/Q2" groups=["spawn_point"]]
+position = Vector2(488, 411)
+
+[node name="spawn_point3" type="Node2D" parent="obsticles/Q2" groups=["spawn_point"]]
+position = Vector2(1342, 967)
+
+[node name="spawn_point4" type="Node2D" parent="obsticles/Q2" groups=["spawn_point"]]
+position = Vector2(1740, 596)
+
+[node name="spawn_point5" type="Node2D" parent="obsticles/Q2" groups=["spawn_point"]]
+position = Vector2(2220, 279)
+
+[node name="spawn_point6" type="Node2D" parent="obsticles/Q2" groups=["spawn_point"]]
+position = Vector2(2191, 865)
+
+[node name="spawn_point7" type="Node2D" parent="obsticles/Q2" groups=["spawn_point"]]
+position = Vector2(1771, 1276)
+
+[node name="Q3" type="Node2D" parent="obsticles"]
+scale = Vector2(-1, 1)
+
+[node name="wall1" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(259, 216)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall1"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall1"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall2" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(738, 207)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall2"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall2"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall14" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(2568, 862)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall14"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall14"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall15" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(2649, 283)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall15"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall15"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall3" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(945, 957)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall3"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall3"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall4" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(519, 751)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall4"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall4"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall9" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(1723, 934)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall9"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall9"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall10" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(1780, 266)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall10"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall10"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall5" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(391, 1162)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall5"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall5"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall6" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(1320, 617)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall6"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall6"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall7" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(1325, 1322)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall7"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall7"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall8" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(1301, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall8"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall8"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall11" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(2218, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall11"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall11"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall12" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(2218, 527)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall12"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall12"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall13" type="StaticBody2D" parent="obsticles/Q3"]
+position = Vector2(2218, 1215)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q3/wall13"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q3/wall13"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="spawn_point1" type="Node2D" parent="obsticles/Q3" groups=["spawn_point"]]
+position = Vector2(1282, 262)
+
+[node name="spawn_point2" type="Node2D" parent="obsticles/Q3" groups=["spawn_point"]]
+position = Vector2(488, 411)
+
+[node name="spawn_point3" type="Node2D" parent="obsticles/Q3" groups=["spawn_point"]]
+position = Vector2(1342, 967)
+
+[node name="spawn_point4" type="Node2D" parent="obsticles/Q3" groups=["spawn_point"]]
+position = Vector2(1740, 596)
+
+[node name="spawn_point5" type="Node2D" parent="obsticles/Q3" groups=["spawn_point"]]
+position = Vector2(2220, 279)
+
+[node name="spawn_point6" type="Node2D" parent="obsticles/Q3" groups=["spawn_point"]]
+position = Vector2(2191, 865)
+
+[node name="spawn_point7" type="Node2D" parent="obsticles/Q3" groups=["spawn_point"]]
+position = Vector2(1771, 1276)
+
+[node name="Q4" type="Node2D" parent="obsticles"]
+
+[node name="wall1" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(259, 216)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall1"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall1"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall2" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(738, 207)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall2"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall2"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall14" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(2568, 862)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall14"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall14"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall15" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(2649, 283)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall15"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall15"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall3" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(945, 957)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall3"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall3"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall4" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(519, 751)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall4"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall4"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall9" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(1723, 934)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall9"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall9"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall10" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(1780, 266)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall10"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall10"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall5" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(391, 1162)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall5"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall5"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall6" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(1320, 617)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall6"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall6"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall7" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(1325, 1322)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall7"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall7"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall8" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(1301, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall8"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall8"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall11" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(2218, 68)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall11"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall11"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall12" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(2218, 527)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall12"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall12"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="wall13" type="StaticBody2D" parent="obsticles/Q4"]
+position = Vector2(2218, 1215)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="obsticles/Q4/wall13"]
+scale = Vector2(1, 0.265)
+texture = ExtResource("4_cuart")
+
+[node name="hitbox" type="CollisionShape2D" parent="obsticles/Q4/wall13"]
+shape = SubResource("RectangleShape2D_4hx23")
+
+[node name="spawn_point1" type="Node2D" parent="obsticles/Q4" groups=["spawn_point"]]
+position = Vector2(1282, 262)
+
+[node name="spawn_point2" type="Node2D" parent="obsticles/Q4" groups=["spawn_point"]]
+position = Vector2(488, 411)
+
+[node name="spawn_point3" type="Node2D" parent="obsticles/Q4" groups=["spawn_point"]]
+position = Vector2(1342, 967)
+
+[node name="spawn_point4" type="Node2D" parent="obsticles/Q4" groups=["spawn_point"]]
+position = Vector2(1740, 596)
+
+[node name="spawn_point5" type="Node2D" parent="obsticles/Q4" groups=["spawn_point"]]
+position = Vector2(2220, 279)
+
+[node name="spawn_point6" type="Node2D" parent="obsticles/Q4" groups=["spawn_point"]]
+position = Vector2(2191, 865)
+
+[node name="spawn_point7" type="Node2D" parent="obsticles/Q4" groups=["spawn_point"]]
+position = Vector2(1771, 1276)
+
+[node name="border1" type="StaticBody2D" parent="."]
+position = Vector2(1779, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border1"]
+shape = SubResource("WorldBoundaryShape2D_7m7xx")
+
+[node name="border2" type="StaticBody2D" parent="."]
+position = Vector2(-1755, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border2"]
+position = Vector2(-954, -52)
+shape = SubResource("WorldBoundaryShape2D_qnxca")
+
+[node name="border3" type="StaticBody2D" parent="."]
+position = Vector2(0, -851)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
+shape = SubResource("WorldBoundaryShape2D_etye6")
+
+[node name="border4" type="StaticBody2D" parent="."]
+position = Vector2(0, 894)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border4"]
+shape = SubResource("WorldBoundaryShape2D_a60i6")

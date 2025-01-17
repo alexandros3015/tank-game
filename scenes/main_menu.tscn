@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh8ey72l7dnj5"]
+[gd_scene load_steps=3 format=3 uid="uid://dh8ey72l7dnj5"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6wmml"]
-[ext_resource type="PackedScene" uid="uid://dkgfasnrjcoch" path="res://scenes/server_list.tscn" id="2_kywlx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4844f"]
 bg_color = Color(0.180005, 0.180005, 0.180005, 1)
@@ -57,93 +56,21 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "Close Game"
 
-[node name="host" type="Button" parent="."]
+[node name="multiplayer" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.922917
-anchor_top = 0.433333
-anchor_right = 1.00156
-anchor_bottom = 0.522222
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "Host"
-metadata/_edit_use_anchors_ = true
-
-[node name="connect" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.864062
-anchor_top = 0.544444
-anchor_right = 1.00104
-anchor_bottom = 0.633333
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "Connect"
-metadata/_edit_use_anchors_ = true
-
-[node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 0
-anchor_left = 0.870833
-anchor_top = 0.65
-anchor_right = 0.997917
-anchor_bottom = 0.738889
-offset_bottom = 6.10352e-05
-theme_override_font_sizes/font_size = 64
-text = "localhost"
-placeholder_text = "IP"
-metadata/_edit_use_anchors_ = true
-
-[node name="ServerList" parent="." instance=ExtResource("2_kywlx")]
-layout_mode = 0
-offset_left = 1093.0
-offset_top = 604.0
-offset_right = 1636.0
-offset_bottom = 880.0
-
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
-[node name="username" type="LineEdit" parent="."]
-layout_mode = 1
-anchors_preset = 4
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
+offset_left = -362.0
 offset_top = -48.0
-offset_right = 333.0
 offset_bottom = 48.0
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
-placeholder_text = "Username"
-
-[node name="max_clients" type="SpinBox" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.569
-anchor_bottom = 0.569
-offset_left = 3.0
-offset_top = -16.52
-offset_right = 191.0
-offset_bottom = 33.48
-min_value = 2.0
-max_value = 10.0
-value = 2.0
-rounded = true
-
-[node name="so you know" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.637
-anchor_bottom = 0.637
-offset_left = 24.0
-offset_top = -22.96
-offset_right = 125.0
-offset_bottom = 0.039978
-text = "^ max clients"
+text = "Multiplayer"
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="connect" to="." method="_on_connect_pressed"]
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
-[connection signal="text_changed" from="username" to="." method="_on_username_text_changed"]
+[connection signal="pressed" from="multiplayer" to="." method="_on_multiplayer_pressed"]

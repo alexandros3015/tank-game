@@ -3,11 +3,27 @@ extends Node2D
 var spawn_positions: Array
 var players = {}
 
+var is_big_map = true
+
+const BIGMAP = preload("res://scenes/thicc_main_area_multiplayer.tscn")
+const SMALLMAP = preload("res://scenes/main_area_template.tscn")
+
 var starting = false
 var tank = preload("res://scenes/tank_multiplaeer.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawn_positions = [$spawn_point1, $spawn_point2, $spawn_point3, $spawn_point4]
+	if is_big_map:
+		$camera.enabled = false
+		name = "thicc_mainarea"
+		
+		var bigmap = BIGMAP.instantiate()
+		add_child(bigmap)
+	else:
+		
+		var smallmap = SMALLMAP.instantiate()
+		add_child(smallmap)
+	
+	spawn_positions = get_tree().get_nodes_in_group("spawn_point")
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	
@@ -29,16 +45,16 @@ func _on_peer_connected(id: int = 1):
 		"ready": false
 	}
 	
-	if has_node(str(id)):
-		print("A player with ID", id, "already exists.")
-		return
+	if starting: return
+	show_ready.rpc_id(id)
 	
 	
 
 func _on_peer_disconnected(id: int = 1):
 	if multiplayer.is_server():
 		players.erase(id)
-		get_node(str(id)).queue_free()
+		if get_node_or_null(str(id)): 
+			get_node(str(id)).queue_free()
 		
 		if players.size() == 0:
 			get_tree().quit()
@@ -66,12 +82,11 @@ func spawn_players() -> void:
 		spawn_positions.remove_at(spawn_positions.find(choice))
 		
 		if spawn_positions == []:
-			spawn_positions = [$spawn_point1, $spawn_point2, $spawn_point3, $spawn_point4]
+			spawn_positions = get_tree().get_nodes_in_group("spawn_point")
 
 @rpc("authority", "call_local")
 func prepare() -> void:
 	$HUD/ready.disabled = true
-	
 	starting = true
 	$ready_timer.start()
 	
@@ -79,9 +94,10 @@ func prepare() -> void:
 
 @rpc("any_peer", "call_local")
 func ready(ready: bool) -> void:
+	if starting: return
 	players[multiplayer.get_remote_sender_id()].ready = ready
-	
-	
+		
+		
 	var is_everyone_ready = true
 	for i in players:
 		if players[i].ready == false: 
@@ -90,13 +106,17 @@ func ready(ready: bool) -> void:
 			
 	if is_everyone_ready:
 		prepare.rpc()
-		
+	
 
 func _on_ready_toggled(toggled_on: bool) -> void:
 	ready.rpc_id(1, toggled_on)
 
 
 func _on_ready_timer_timeout() -> void:
-	$HUD/ready.visible = false
+	$HUD/ready.hide()
 
 	if multiplayer.is_server(): spawn_players()
+
+@rpc("any_peer", "call_local")
+func show_ready() -> void:
+	$HUD/ready.show()

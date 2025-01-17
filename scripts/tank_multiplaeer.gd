@@ -21,10 +21,16 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(uid)
 
 func _ready() -> void:
-	if !is_multiplayer_authority(): return
+	if get_parent().name != "thicc_mainarea" or !is_multiplayer_authority():
+		$camera.enabled = false
+		return
+	
+		
 	
 	username.text = Global.username
-
+	
+	
+	
 func _physics_process(delta: float) -> void:
 	
 	if !is_multiplayer_authority(): return

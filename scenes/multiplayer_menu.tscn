@@ -1,0 +1,160 @@
+[gd_scene load_steps=4 format=3 uid="uid://c01v3bmswleuk"]
+
+[ext_resource type="Script" path="res://scripts/multiplayer_menu.gd" id="1_0cs2c"]
+[ext_resource type="PackedScene" uid="uid://dkgfasnrjcoch" path="res://scenes/server_list.tscn" id="2_ukrab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4844f"]
+bg_color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="main_menu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4844f")
+script = ExtResource("1_0cs2c")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.0
+offset_right = 338.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 128
+text = "Tank game (Multiplayer)"
+
+[node name="close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -372.0
+offset_top = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Back to main menu"
+
+[node name="host" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.339583
+anchor_top = 0.432407
+anchor_right = 0.418229
+anchor_bottom = 0.521296
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Host"
+metadata/_edit_use_anchors_ = true
+
+[node name="connect" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.864062
+anchor_top = 0.544444
+anchor_right = 1.00104
+anchor_bottom = 0.633333
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Connect"
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+anchor_left = 0.870833
+anchor_top = 0.65
+anchor_right = 0.997917
+anchor_bottom = 0.738889
+offset_bottom = 6.10352e-05
+theme_override_font_sizes/font_size = 64
+text = "localhost"
+placeholder_text = "IP"
+metadata/_edit_use_anchors_ = true
+
+[node name="ServerList" parent="." instance=ExtResource("2_ukrab")]
+layout_mode = 0
+anchor_left = 0.530729
+anchor_top = 0.355556
+anchor_right = 0.813542
+anchor_bottom = 0.611111
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="username" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -48.0
+offset_right = 333.0
+offset_bottom = 48.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+placeholder_text = "Username"
+
+[node name="max_clients" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.569
+anchor_bottom = 0.569
+offset_left = 3.0
+offset_top = -16.52
+offset_right = 191.0
+offset_bottom = 33.48
+min_value = 2.0
+max_value = 10.0
+value = 2.0
+rounded = true
+
+[node name="so you know" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.637
+anchor_bottom = 0.637
+offset_left = 24.0
+offset_top = -22.96
+offset_right = 125.0
+offset_bottom = 0.039978
+text = "^ max clients"
+
+[node name="or\\" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.457812
+anchor_top = 0.448148
+anchor_right = 0.492708
+anchor_bottom = 0.52963
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "or"
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckButton" parent="."]
+layout_mode = 0
+anchor_left = 0.009375
+anchor_top = 0.350926
+anchor_right = 0.153125
+anchor_bottom = 0.439815
+offset_right = 20.0
+theme_override_font_sizes/font_size = 64
+text = "Big Map"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="connect" to="." method="_on_connect_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="text_changed" from="username" to="." method="_on_username_text_changed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

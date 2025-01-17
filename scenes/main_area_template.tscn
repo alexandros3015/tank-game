@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://48mj6tbdvyqo"]
+
+[ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="1_07waw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki3tc"]
+size = Vector2(753, 190)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pjwle"]
+normal = Vector2(-0.999825, 0.0186883)
+distance = -961.636
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g5w5l"]
+normal = Vector2(1, 0)
+distance = -9.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kjoem"]
+normal = Vector2(-0.0112352, 0.999937)
+distance = -542.168
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pgx8d"]
+distance = -540.0
+
+[node name="main" type="Node2D"]
+
+[node name="wall1" type="StaticBody2D" parent="."]
+position = Vector2(-216, 154)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="wall1"]
+position = Vector2(-298, -415)
+scale = Vector2(1, 0.265)
+texture = ExtResource("1_07waw")
+
+[node name="hitbox" type="CollisionShape2D" parent="wall1"]
+position = Vector2(-297, -416)
+shape = SubResource("RectangleShape2D_ki3tc")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(-315, 496)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="wall2"]
+position = Vector2(-298, -415)
+scale = Vector2(1, 0.265)
+texture = ExtResource("1_07waw")
+
+[node name="hitbox" type="CollisionShape2D" parent="wall2"]
+position = Vector2(-297, -416)
+shape = SubResource("RectangleShape2D_ki3tc")
+
+[node name="wall3" type="StaticBody2D" parent="."]
+position = Vector2(250, 654)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="wall3"]
+position = Vector2(-298, -415)
+scale = Vector2(1, 0.265)
+texture = ExtResource("1_07waw")
+
+[node name="hitbox" type="CollisionShape2D" parent="wall3"]
+position = Vector2(-297, -416)
+shape = SubResource("RectangleShape2D_ki3tc")
+
+[node name="wall4" type="StaticBody2D" parent="."]
+position = Vector2(-510, -134)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="wall4"]
+position = Vector2(-298, -415)
+scale = Vector2(1, 0.265)
+texture = ExtResource("1_07waw")
+
+[node name="hitbox" type="CollisionShape2D" parent="wall4"]
+position = Vector2(-297, -416)
+shape = SubResource("RectangleShape2D_ki3tc")
+
+[node name="wall5" type="StaticBody2D" parent="."]
+position = Vector2(670, -165)
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="wall5"]
+position = Vector2(-298, -415)
+scale = Vector2(1, 0.265)
+texture = ExtResource("1_07waw")
+
+[node name="hitbox" type="CollisionShape2D" parent="wall5"]
+position = Vector2(-297, -416)
+shape = SubResource("RectangleShape2D_ki3tc")
+
+[node name="wall6" type="StaticBody2D" parent="."]
+position = Vector2(449, 299)
+rotation = 1.5708
+scale = Vector2(0.52, 0.52)
+
+[node name="seewall" type="Sprite2D" parent="wall6"]
+position = Vector2(-298, -415)
+scale = Vector2(1, 0.265)
+texture = ExtResource("1_07waw")
+
+[node name="hitbox" type="CollisionShape2D" parent="wall6"]
+position = Vector2(-297, -416)
+shape = SubResource("RectangleShape2D_ki3tc")
+
+[node name="border1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border1"]
+shape = SubResource("WorldBoundaryShape2D_pjwle")
+
+[node name="border2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border2"]
+position = Vector2(-954, -52)
+shape = SubResource("WorldBoundaryShape2D_g5w5l")
+
+[node name="border3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
+shape = SubResource("WorldBoundaryShape2D_kjoem")
+
+[node name="border4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border4"]
+shape = SubResource("WorldBoundaryShape2D_pgx8d")
+
+[node name="spawn_point1" type="Node2D" parent="."]
+position = Vector2(-542, -3)
+
+[node name="spawn_point2" type="Node2D" parent="."]
+position = Vector2(5, -418)
+
+[node name="spawn_point3" type="Node2D" parent="."]
+position = Vector2(360, 3)
+
+[node name="spawn_point4" type="Node2D" parent="."]
+position = Vector2(798, -205)
