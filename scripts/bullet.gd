@@ -35,6 +35,7 @@ func owie() -> void:
 	$circle.scale = Vector2(.2, .2)
 	rotation_degrees = 0
 	$circle.texture = boomsprite
+	$boom.play()
 	$owie_timer.start()
 
 func _on_kill_bullet_timer_timeout() -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b23vgmpdhqrs3"]
+[gd_scene load_steps=5 format=3 uid="uid://b23vgmpdhqrs3"]
 
 [ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="1_g3kcq"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_jvtfu"]
+[ext_resource type="AudioStream" uid="uid://c0p0ch3vehipt" path="res://assets/explosion.wav" id="3_nfp0e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqwh1"]
 radius = 9.05539
@@ -22,6 +23,10 @@ autostart = true
 
 [node name="owie_timer" type="Timer" parent="."]
 wait_time = 0.7
+
+[node name="boom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nfp0e")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="kill_bullet_timer" to="." method="_on_kill_bullet_timer_timeout"]

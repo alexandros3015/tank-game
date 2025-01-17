@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://de7kywohp4pur"]
+[gd_scene load_steps=13 format=3 uid="uid://de7kywohp4pur"]
 
 [ext_resource type="Script" path="res://scripts/tank_multiplaeer.gd" id="1_21urb"]
 [ext_resource type="Texture2D" uid="uid://dwm57ny557t0t" path="res://icon.svg" id="2_j5g88"]
 [ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="3_1i2xj"]
 [ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="4_gwlvb"]
+[ext_resource type="Texture2D" uid="uid://16fgxqtcfuie" path="res://assets/heart_7.png" id="5_yi2w7"]
+[ext_resource type="Texture2D" uid="uid://71hoynnnkhay" path="res://assets/BulletIcon_1.png" id="6_3vl04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su32n"]
 size = Vector2(97, 93)
@@ -129,6 +131,16 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_r7y2q")
 max_value = 20.0
 value = 20.0
 show_percentage = false
+
+[node name="heart" type="Sprite2D" parent="."]
+position = Vector2(-55, -91)
+scale = Vector2(0.489583, 0.53125)
+texture = ExtResource("5_yi2w7")
+
+[node name="BulletIcon" type="Sprite2D" parent="."]
+position = Vector2(-55, -72)
+scale = Vector2(0.732955, 0.773573)
+texture = ExtResource("6_3vl04")
 
 [connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]
 [connection signal="timeout" from="fire_cooldown" to="." method="_on_fire_cooldown_timeout"]

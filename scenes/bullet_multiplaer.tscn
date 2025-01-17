@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://co4f5qq3u0sc3"]
+[gd_scene load_steps=6 format=3 uid="uid://co4f5qq3u0sc3"]
 
 [ext_resource type="Script" path="res://scripts/bullet_multiplaer.gd" id="1_gmwti"]
 [ext_resource type="Texture2D" uid="uid://rj3fumfekq3l" path="res://assets/rwcircle.png" id="2_41erk"]
+[ext_resource type="AudioStream" uid="uid://c0p0ch3vehipt" path="res://assets/explosion.wav" id="3_u8cup"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqwh1"]
 radius = 9.05539
@@ -33,6 +34,9 @@ wait_time = 0.7
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_slhnm")
+
+[node name="boom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u8cup")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="kill_bullet_timer" to="." method="_on_kill_bullet_timer_timeout"]

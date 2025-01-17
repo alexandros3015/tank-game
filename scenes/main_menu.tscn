@@ -127,7 +127,7 @@ offset_right = 191.0
 offset_bottom = 33.48
 min_value = 2.0
 max_value = 10.0
-value = 3.0
+value = 2.0
 rounded = true
 
 [node name="so you know" type="Label" parent="."]
