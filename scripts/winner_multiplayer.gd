@@ -32,9 +32,7 @@ func _process(delta: float) -> void:
 			
 			win_process()
 func disable_gameplay():
-	for node in get_tree().get_nodes_in_group("tank"):
-		node.set_process(false)
-		node.set_physics_process(false)
+	pass
 
 func _on_timer_timeout() -> void:
 	

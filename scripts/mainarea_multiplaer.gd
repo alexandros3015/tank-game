@@ -18,8 +18,8 @@ func _ready() -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if starting: $HUD/ready.text = str(floor($ready_timer.time_left))
+func _process(_delta: float) -> void:
+	if starting: $HUD/ready.text = str(ceil($ready_timer.time_left))
 
 func _on_peer_connected(id: int = 1):
 	if !multiplayer.is_server(): return

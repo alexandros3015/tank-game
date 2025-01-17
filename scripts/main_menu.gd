@@ -14,7 +14,7 @@ func _ready() -> void:
 		if args.has("port"):
 			port = args["port"]
 		
-		var max_clients = 2
+		var max_clients = 3
 		if args.has("max_clients"):
 			max_clients = args["max_clients"]
 		print("hosting on port ", port)
@@ -38,11 +38,11 @@ func host(port = 6969, max_clients = 2) -> void:
 	get_tree().change_scene_to_file.call_deferred("res://scenes/mainareaMULTIPLAER.tscn")
 
 func host_but_like_not():
-	var name: String
+	var usrname: String
 	if $username.text == "":
-		name = OS.get_environment("USERNAME")
+		usrname = OS.get_environment("USERNAME")
 	else:
-		name = $username.text
+		usrname = $username.text
 		
 	var max_clients: int = $max_clients.value
 	
