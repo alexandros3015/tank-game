@@ -91,6 +91,10 @@ script = ExtResource("4_eoxqp")
 wait_time = 3.0
 one_shot = true
 
+[node name="edging" type="Button" parent="HUD"]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [node name="wall1" type="StaticBody2D" parent="."]
 position = Vector2(-216, 154)
 rotation = 1.5708
@@ -212,3 +216,4 @@ position = Vector2(-5, 290)
 
 [connection signal="pressed" from="HUD/GETOUT" to="HUD" method="_on_getout_pressed"]
 [connection signal="timeout" from="HUD/winner/timer" to="HUD/winner" method="_on_timer_timeout"]
+[connection signal="pressed" from="HUD/edging" to="HUD" method="_on_edging_pressed"]
