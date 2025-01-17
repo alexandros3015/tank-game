@@ -22,7 +22,7 @@ func _ready() -> void:
 		if args.has("max_clients"):
 			max_clients = args["max_clients"]
 			
-		var is_big_map = true
+		var is_big_map = false
 		if args.has("big_map"):
 			is_big_map = args['big_map']
 		
@@ -46,7 +46,7 @@ func host(port = 6969, max_clients = 2, is_big_mape: bool = true) -> void:
 	multiplayer.multiplayer_peer = peer
 	
 	var mainarea = main_area.instantiate()
-	mainarea.is_big_map = is_big_map
+	mainarea.is_big_map = is_big_mape
 	
 	get_tree().root.add_child(mainarea)
 	queue_free()

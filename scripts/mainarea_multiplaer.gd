@@ -3,7 +3,7 @@ extends Node2D
 var spawn_positions: Array
 var players = {}
 
-var is_big_map = true
+@export var is_big_map = true
 
 const BIGMAP = preload("res://scenes/thicc_main_area_multiplayer.tscn")
 const SMALLMAP = preload("res://scenes/main_area_template.tscn")
@@ -12,16 +12,15 @@ var starting = false
 var tank = preload("res://scenes/tank_multiplaeer.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if is_big_map:
-		$camera.enabled = false
-		name = "thicc_mainarea"
-		
-		var bigmap = BIGMAP.instantiate()
-		add_child(bigmap)
-	else:
-		
-		var smallmap = SMALLMAP.instantiate()
-		add_child(smallmap)
+	
+	if multiplayer.is_server():
+		if is_big_map:
+			$camera.enabled = false
+			var bigmap = BIGMAP.instantiate()
+			add_child(bigmap)
+		else:
+			var smallmap = SMALLMAP.instantiate()
+			add_child(smallmap)
 	
 	spawn_positions = get_tree().get_nodes_in_group("spawn_point")
 	multiplayer.peer_connected.connect(_on_peer_connected)
@@ -30,9 +29,6 @@ func _ready() -> void:
 	
 	if multiplayer.is_server() and !OS.has_feature("dedicated_server"):
 		_on_peer_connected()
-	
-	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if starting: $HUD/ready.text = str(ceil($ready_timer.time_left))

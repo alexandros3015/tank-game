@@ -123,14 +123,14 @@ shape = SubResource("WorldBoundaryShape2D_kjoem")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border4"]
 shape = SubResource("WorldBoundaryShape2D_pgx8d")
 
-[node name="spawn_point1" type="Node2D" parent="."]
+[node name="spawn_point1" type="Node2D" parent="." groups=["spawn_point"]]
 position = Vector2(-542, -3)
 
-[node name="spawn_point2" type="Node2D" parent="."]
+[node name="spawn_point2" type="Node2D" parent="." groups=["spawn_point"]]
 position = Vector2(5, -418)
 
-[node name="spawn_point3" type="Node2D" parent="."]
+[node name="spawn_point3" type="Node2D" parent="." groups=["spawn_point"]]
 position = Vector2(360, 3)
 
-[node name="spawn_point4" type="Node2D" parent="."]
+[node name="spawn_point4" type="Node2D" parent="." groups=["spawn_point"]]
 position = Vector2(798, -205)
