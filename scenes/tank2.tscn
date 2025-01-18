@@ -15,14 +15,13 @@ script = ExtResource("1_cnuw8")
 texture = ExtResource("2_aqoq2")
 
 [node name="indicatortemp" type="Sprite2D" parent="Base"]
-position = Vector2(59.5, 4.25)
+position = Vector2(59.5, 0)
 scale = Vector2(0.01625, 0.046875)
 texture = ExtResource("3_51do8")
 
 [node name="Spinny" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
 rotation = -1.57615
-scale = Vector2(0.283073, 0.25651)
+scale = Vector2(0.250148, 0.25651)
 texture = ExtResource("4_bf3uf")
 
 [node name="Barrel" type="Sprite2D" parent="Spinny"]
