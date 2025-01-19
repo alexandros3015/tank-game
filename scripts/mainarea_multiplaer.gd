@@ -96,7 +96,7 @@ func enable_camera():
 func prepare() -> void:
 	$HUD/ready.disabled = true
 	$ready_timer.start()
-	
+	$"321".play()
 	
 
 @rpc("any_peer", "call_local")

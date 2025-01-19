@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://0tndp7tgw7ms"]
+[gd_scene load_steps=7 format=3 uid="uid://0tndp7tgw7ms"]
 
 [ext_resource type="Script" path="res://scripts/mainarea_multiplaer.gd" id="1_835vx"]
 [ext_resource type="Script" path="res://scripts/hud_multiplayer.gd" id="2_6645h"]
 [ext_resource type="Script" path="res://scripts/multiplayer_camera.gd" id="2_ycib1"]
 [ext_resource type="Script" path="res://scripts/winner_multiplayer.gd" id="3_lqntj"]
+[ext_resource type="AudioStream" uid="uid://ce50ua8skqwex" path="res://assets/321.mp3" id="5_h3hl7"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ua31s"]
 properties/0/path = NodePath(".:is_big_map")
@@ -91,6 +92,9 @@ one_shot = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_ua31s")
+
+[node name="321" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h3hl7")
 
 [connection signal="pressed" from="HUD/GETOUT" to="HUD" method="_on_getout_pressed"]
 [connection signal="timeout" from="HUD/winner/timer" to="HUD/winner" method="_on_timer_timeout"]
