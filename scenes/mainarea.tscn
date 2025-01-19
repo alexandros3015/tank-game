@@ -1,59 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsjbgwj8eun63"]
+[gd_scene load_steps=4 format=3 uid="uid://bsjbgwj8eun63"]
 
-[ext_resource type="PackedScene" uid="uid://d20rkomgxxlq8" path="res://scenes/tank1.tscn" id="1_43cn3"]
+[ext_resource type="Script" path="res://scripts/mainarea.gd" id="1_y2eiv"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="2_pouh1"]
-[ext_resource type="Texture2D" uid="uid://c2plgu1mrvbh0" path="res://assets/wsquare.png" id="3_47jw1"]
-[ext_resource type="PackedScene" uid="uid://cpd5f7k7s14ws" path="res://scenes/tank2.tscn" id="3_b82av"]
 [ext_resource type="Script" path="res://scripts/winner.gd" id="4_eoxqp"]
-[ext_resource type="PackedScene" uid="uid://bahg5rivlu4j0" path="res://scenes/powerup_spawn.tscn" id="6_kbg2m"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hx23"]
-size = Vector2(753, 190)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7m7xx"]
-normal = Vector2(-0.999825, 0.0186883)
-distance = -961.636
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qnxca"]
-normal = Vector2(1, 0)
-distance = -9.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_etye6"]
-normal = Vector2(-0.0112352, 0.999937)
-distance = -542.168
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a60i6"]
-distance = -540.0
 
 [node name="mainarea" type="Node2D"]
-
-[node name="tank1" parent="." groups=["gameplay"] instance=ExtResource("1_43cn3")]
-position = Vector2(-364, 0)
-
-[node name="tank2" parent="." groups=["gameplay"] instance=ExtResource("3_b82av")]
-position = Vector2(343, 18)
+script = ExtResource("1_y2eiv")
 
 [node name="camera" type="Camera2D" parent="."]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("2_pouh1")
-
-[node name="p1info" type="Label" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 32
-text = "Bullets: "
-metadata/_edit_use_anchors_ = true
-
-[node name="p2info" type="Label" parent="HUD"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 32
-metadata/_edit_use_anchors_ = true
 
 [node name="GETOUT" type="Button" parent="HUD"]
 anchors_preset = 6
@@ -95,124 +52,34 @@ one_shot = true
 offset_right = 8.0
 offset_bottom = 8.0
 
-[node name="wall1" type="StaticBody2D" parent="."]
-position = Vector2(-216, 154)
-rotation = 1.5708
-scale = Vector2(0.52, 0.52)
+[node name="bigmapsplitscreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="seewall" type="Sprite2D" parent="wall1"]
-position = Vector2(-298, -415)
-scale = Vector2(1, 0.265)
-texture = ExtResource("3_47jw1")
+[node name="HBoxContainer" type="HBoxContainer" parent="bigmapsplitscreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="hitbox" type="CollisionShape2D" parent="wall1"]
-position = Vector2(-297, -416)
-shape = SubResource("RectangleShape2D_4hx23")
+[node name="tank_1view" type="SubViewportContainer" parent="bigmapsplitscreen/HBoxContainer"]
+layout_mode = 2
 
-[node name="wall2" type="StaticBody2D" parent="."]
-position = Vector2(-315, 496)
-scale = Vector2(0.52, 0.52)
+[node name="SubViewport" type="SubViewport" parent="bigmapsplitscreen/HBoxContainer/tank_1view"]
+handle_input_locally = false
+size = Vector2i(960, 1080)
+render_target_update_mode = 4
 
-[node name="seewall" type="Sprite2D" parent="wall2"]
-position = Vector2(-298, -415)
-scale = Vector2(1, 0.265)
-texture = ExtResource("3_47jw1")
+[node name="tank_2view" type="SubViewportContainer" parent="bigmapsplitscreen/HBoxContainer"]
+layout_mode = 2
 
-[node name="hitbox" type="CollisionShape2D" parent="wall2"]
-position = Vector2(-297, -416)
-shape = SubResource("RectangleShape2D_4hx23")
-
-[node name="wall3" type="StaticBody2D" parent="."]
-position = Vector2(250, 654)
-scale = Vector2(0.52, 0.52)
-
-[node name="seewall" type="Sprite2D" parent="wall3"]
-position = Vector2(-298, -415)
-scale = Vector2(1, 0.265)
-texture = ExtResource("3_47jw1")
-
-[node name="hitbox" type="CollisionShape2D" parent="wall3"]
-position = Vector2(-297, -416)
-shape = SubResource("RectangleShape2D_4hx23")
-
-[node name="wall4" type="StaticBody2D" parent="."]
-position = Vector2(-510, -134)
-scale = Vector2(0.52, 0.52)
-
-[node name="seewall" type="Sprite2D" parent="wall4"]
-position = Vector2(-298, -415)
-scale = Vector2(1, 0.265)
-texture = ExtResource("3_47jw1")
-
-[node name="hitbox" type="CollisionShape2D" parent="wall4"]
-position = Vector2(-297, -416)
-shape = SubResource("RectangleShape2D_4hx23")
-
-[node name="wall5" type="StaticBody2D" parent="."]
-position = Vector2(670, -165)
-scale = Vector2(0.52, 0.52)
-
-[node name="seewall" type="Sprite2D" parent="wall5"]
-position = Vector2(-298, -415)
-scale = Vector2(1, 0.265)
-texture = ExtResource("3_47jw1")
-
-[node name="hitbox" type="CollisionShape2D" parent="wall5"]
-position = Vector2(-297, -416)
-shape = SubResource("RectangleShape2D_4hx23")
-
-[node name="wall6" type="StaticBody2D" parent="."]
-position = Vector2(449, 299)
-rotation = 1.5708
-scale = Vector2(0.52, 0.52)
-
-[node name="seewall" type="Sprite2D" parent="wall6"]
-position = Vector2(-298, -415)
-scale = Vector2(1, 0.265)
-texture = ExtResource("3_47jw1")
-
-[node name="hitbox" type="CollisionShape2D" parent="wall6"]
-position = Vector2(-297, -416)
-shape = SubResource("RectangleShape2D_4hx23")
-
-[node name="border1" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border1"]
-shape = SubResource("WorldBoundaryShape2D_7m7xx")
-
-[node name="border2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border2"]
-position = Vector2(-954, -52)
-shape = SubResource("WorldBoundaryShape2D_qnxca")
-
-[node name="border3" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
-shape = SubResource("WorldBoundaryShape2D_etye6")
-
-[node name="border4" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border4"]
-shape = SubResource("WorldBoundaryShape2D_a60i6")
-
-[node name="powerup_spawn1" parent="." groups=["powerup_spawn"] instance=ExtResource("6_kbg2m")]
-position = Vector2(-872, -465)
-
-[node name="powerup_spawn2" parent="." groups=["powerup_spawn"] instance=ExtResource("6_kbg2m")]
-position = Vector2(-884, 436)
-
-[node name="powerup_spawn3" parent="." groups=["powerup_spawn"] instance=ExtResource("6_kbg2m")]
-position = Vector2(847, -500)
-
-[node name="powerup_spawn4" parent="." groups=["powerup_spawn"] instance=ExtResource("6_kbg2m")]
-position = Vector2(844, 464)
-
-[node name="powerup_spawn5" parent="." groups=["powerup_spawn"] instance=ExtResource("6_kbg2m")]
-position = Vector2(230, -227)
-
-[node name="powerup_spawn6" parent="." groups=["powerup_spawn"] instance=ExtResource("6_kbg2m")]
-position = Vector2(-5, 290)
+[node name="SubViewport" type="SubViewport" parent="bigmapsplitscreen/HBoxContainer/tank_2view"]
+handle_input_locally = false
+size = Vector2i(960, 1080)
+render_target_update_mode = 4
 
 [connection signal="pressed" from="HUD/GETOUT" to="HUD" method="_on_getout_pressed"]
 [connection signal="timeout" from="HUD/winner/timer" to="HUD/winner" method="_on_timer_timeout"]

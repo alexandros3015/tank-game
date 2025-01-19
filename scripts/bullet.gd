@@ -19,15 +19,12 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if !doing_owie:
-		if body.has_method("hurt1"):
-			body.hurt1()
-			owie()
-		elif body.has_method("hurt2"):
-			body.hurt2()
+		if body is Tank:
+			body.hurt()
 			owie()
 		else:
-			print("No hurt method found on: ", body)
 			queue_free()
+		
 	
 	
 func owie() -> void:
