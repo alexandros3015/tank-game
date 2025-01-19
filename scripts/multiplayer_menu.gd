@@ -22,7 +22,7 @@ func _ready() -> void:
 		if args.has("max_clients"):
 			max_clients = args["max_clients"]
 			
-		var is_big_map = true
+		var is_big_map = false
 		if args.has("big_map"):
 			is_big_map = args['big_map']
 		

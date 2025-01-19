@@ -9,7 +9,7 @@ class_name MultiplayerTank
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-var dead = false
+@export var dead = false
 var canmove = true
 var canshoot = true
 
@@ -77,6 +77,7 @@ func _physics_process(delta: float) -> void:
 		explode()
 
 
+
 @rpc("any_peer", "call_local") 
 func spawn_bullet(position: Vector2, rotation: float):
 	var bullet = BULLET.instantiate()
@@ -118,4 +119,7 @@ func _on_dead_anim_animation_finished(anim_name: StringName) -> void:
 	if !is_multiplayer_authority(): return
 	
 	visible = false
-	position = Vector2(999, 999)
+	position = Vector2(99999, 99999)
+	
+	get_parent().enable_camera()
+	$camera.enabled = false

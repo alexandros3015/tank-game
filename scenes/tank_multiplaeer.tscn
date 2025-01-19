@@ -48,6 +48,9 @@ properties/10/replication_mode = 1
 properties/11/path = NodePath("explosion:scale")
 properties/11/spawn = true
 properties/11/replication_mode = 1
+properties/12/path = NodePath(".:dead")
+properties/12/spawn = true
+properties/12/replication_mode = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ipe4"]
 

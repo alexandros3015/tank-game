@@ -1,4 +1,5 @@
 extends Node2D
+class_name MainAreaMultiplayer
 
 var spawn_positions: Array
 var players = {}
@@ -8,14 +9,13 @@ var players = {}
 const BIGMAP = preload("res://scenes/thicc_main_area_multiplayer.tscn")
 const SMALLMAP = preload("res://scenes/main_area_template.tscn")
 
-var starting = false
+@export var starting = false
 var tank = preload("res://scenes/tank_multiplaeer.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	if multiplayer.is_server():
 		if is_big_map:
-			$camera.enabled = false
 			var bigmap = BIGMAP.instantiate()
 			add_child(bigmap)
 		else:
@@ -59,7 +59,8 @@ func _on_peer_disconnected(id: int = 1):
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _exit_tree() -> void:
-	multiplayer.multiplayer_peer.close()
+	if multiplayer.has_multiplayer_peer():
+		multiplayer.multiplayer_peer.close()
 
 func spawn_players() -> void:
 	for id in players:
@@ -79,11 +80,21 @@ func spawn_players() -> void:
 		
 		if spawn_positions == []:
 			spawn_positions = get_tree().get_nodes_in_group("spawn_point")
+		
+		if is_big_map:
+			disable_camera.rpc_id(id)
+
+@rpc("any_peer","call_local")
+func disable_camera():
+	$camera.enabled = false
+
+@rpc("any_peer","call_local")
+func enable_camera():
+	$camera.enabled = true
 
 @rpc("authority", "call_local")
 func prepare() -> void:
 	$HUD/ready.disabled = true
-	starting = true
 	$ready_timer.start()
 	
 	
@@ -101,6 +112,7 @@ func ready(ready: bool) -> void:
 			break
 			
 	if is_everyone_ready:
+		starting = true
 		prepare.rpc()
 	
 
