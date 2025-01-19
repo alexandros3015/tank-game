@@ -30,4 +30,8 @@ Kill the enemy tank by shooting it with bullets until it dies. I probably didn't
 - A working computer (important that it does work)
 - A friend (we all know you have none)
 - God level reflexes
-- Why are you playing this random ass game 
+- Why are you playing this random ass game
+
+## Multiplayer
+
+Coming soon. You can run a dedicated server build and connect to it with the join button but proper servers aren't a thing yet.
