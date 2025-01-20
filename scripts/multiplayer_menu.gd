@@ -62,7 +62,7 @@ func host_but_like_not():
 	var max_clients: int = $max_clients.value
 	
 	$HTTPRequest.request("http://%s:8080/new" % [Global.SERVER_IP], [], HTTPClient.METHOD_POST, JSON.stringify({
-		"name": name.strip_edges() + "'s Server",
+		"name": usrname.strip_edges() + "'s Server",
 		"max_players": max_clients,
 		"public": 1,
 		"big_map": 1 if should_big_map else 0
@@ -101,7 +101,8 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 			var json_body = JSON.parse_string(body.get_string_from_utf8())
 			
 			join(Global.SERVER_IP, json_body["port"])
-
+	else:
+		print("There was a not so sigma error: " + body.get_string_from_utf8())
 
 func _server_connected() -> void:
 	
