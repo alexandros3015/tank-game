@@ -17,20 +17,22 @@ func win_process():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if !tstarted:
-		if Global.hp1 <= 0:
-			text = "PLAYER 2 WINS!!!"
+		var tanks = get_tree().get_nodes_in_group("tank")
+		var alive_tanks = get_tree().get_nodes_in_group("tank")
+		for i in range(0, tanks.size()):
+			if tanks[i].hp <= 0:
+				alive_tanks.remove_at(i)
+		
+		
+		
+		if alive_tanks.size() == 1 and tanks.size() > 1:
+			text = str(alive_tanks[0].name) + " WINS!!!"
+			
 			win_process()
-		elif Global.hp2 <= 0:
-			text = "PLAYER 1 WINS!!!"
-			win_process()
-
 func disable_gameplay():
-	for node in get_tree().get_nodes_in_group("gameplay"):
-		node.set_process(false)
-		node.set_physics_process(false)
+	pass
 
 func _on_timer_timeout() -> void:
-	
-	Global.restore_state()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

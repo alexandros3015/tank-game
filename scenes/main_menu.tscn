@@ -71,6 +71,19 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Multiplayer"
 
+[node name="is_big_map" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -12.0
+offset_right = 44.0
+offset_bottom = 12.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Big Map"
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="toggled" from="is_big_map" to="." method="_on_is_big_map_toggled"]

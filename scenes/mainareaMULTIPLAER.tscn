@@ -1,21 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://0tndp7tgw7ms"]
+[gd_scene load_steps=6 format=3 uid="uid://0tndp7tgw7ms"]
 
 [ext_resource type="Script" path="res://scripts/mainarea_multiplaer.gd" id="1_835vx"]
 [ext_resource type="Script" path="res://scripts/hud_multiplayer.gd" id="2_6645h"]
+[ext_resource type="Script" path="res://scripts/multiplayer_camera.gd" id="2_ycib1"]
 [ext_resource type="Script" path="res://scripts/winner_multiplayer.gd" id="3_lqntj"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ua31s"]
 properties/0/path = NodePath(".:is_big_map")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath("camera:enabled")
+properties/1/path = NodePath(".:starting")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
 [node name="mainarea" type="Node2D"]
 script = ExtResource("1_835vx")
 
-[node name="camera" type="Camera2D" parent="."]
+[node name="camera" type="Camera2D" parent="." node_paths=PackedStringArray("main_area")]
+limit_left = -2704
+limit_top = -1378
+limit_right = 2704
+limit_bottom = 1378
+position_smoothing_enabled = true
+script = ExtResource("2_ycib1")
+main_area = NodePath("..")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("2_6645h")
