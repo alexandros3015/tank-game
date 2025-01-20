@@ -24,12 +24,13 @@ func _ready() -> void:
 			
 		var is_big_map = false
 		if args.has("big_map"):
-			is_big_map = args['big_map']
+			is_big_map = args['big_map'] == "true"
+		
+		Global.is_big_map_multi = is_big_map
 		
 		print("hosting on port ", port)
 		host(port, max_clients, is_big_map)
 	
-	multiplayer.connected_to_server.connect(_server_connected)
 	
 	var file = FileAccess.open("user:///username.txt", FileAccess.READ)
 	
@@ -45,11 +46,7 @@ func host(port = 6969, max_clients = 2, is_big_mape: bool = true) -> void:
 	peer.create_server(port, max_clients)
 	multiplayer.multiplayer_peer = peer
 	
-	var mainarea = main_area.instantiate()
-	mainarea.is_big_map = is_big_mape
-	
-	get_tree().root.add_child(mainarea)
-	queue_free()
+	get_tree().change_scene_to_file.call_deferred("res://scenes/mainareaMULTIPLAER.tscn")
 	
 
 func host_but_like_not():
@@ -74,7 +71,7 @@ func join(ip: String, port : int = 6969) -> void:
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(ip, port)
 	multiplayer.multiplayer_peer = peer
-
+	multiplayer.connected_to_server.connect(_server_connected)
 
 
 
