@@ -20,10 +20,11 @@ func _process(delta: float) -> void:
 	
 	if !tstarted:
 		var tanks = get_tree().get_nodes_in_group("tank")
-		var alive_tanks = get_tree().get_nodes_in_group("tank")
-		for i in range(0, tanks.size()):
-			if tanks[i].hp <= 0:
-				alive_tanks.remove_at(i)
+		var alive_tanks: Array
+		
+		for tank in tanks:
+			if not tank.dead:
+				alive_tanks.append(tank)
 		
 		
 		
