@@ -35,7 +35,7 @@ wait_time = 0.7
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_slhnm")
 
-[node name="boom" type="AudioStreamPlayer" parent="."]
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_u8cup")
 volume_db = -20.0
 
