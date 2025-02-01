@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://de7kywohp4pur"]
+[gd_scene load_steps=18 format=3 uid="uid://de7kywohp4pur"]
 
 [ext_resource type="Script" path="res://scripts/tank_multiplaeer.gd" id="1_21urb"]
 [ext_resource type="Texture2D" uid="uid://dwm57ny557t0t" path="res://icon.svg" id="2_j5g88"]
@@ -97,6 +97,8 @@ _data = {
 "RESET": SubResource("Animation_sfoka"),
 "dead_anim": SubResource("Animation_iqqcb")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3d1m"]
 
 [node name="tank1" type="CharacterBody2D" groups=["tank"]]
 script = ExtResource("1_21urb")
@@ -207,6 +209,50 @@ libraries = {
 visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_5apik")
+
+[node name="tcbuttons" type="Node2D" parent="."]
+
+[node name="1btleft" type="TouchScreenButton" parent="tcbuttons"]
+position = Vector2(535, 304)
+scale = Vector2(4.7, 4.7)
+shape = SubResource("RectangleShape2D_u3d1m")
+action = "1tbleft"
+
+[node name="1btleft2" type="TouchScreenButton" parent="tcbuttons"]
+position = Vector2(635, 304)
+scale = Vector2(4.7, 4.7)
+shape = SubResource("RectangleShape2D_u3d1m")
+action = "1forward"
+
+[node name="1btleft3" type="TouchScreenButton" parent="tcbuttons"]
+position = Vector2(736, 304)
+scale = Vector2(4.7, 4.7)
+shape = SubResource("RectangleShape2D_u3d1m")
+action = "1tbright"
+
+[node name="1btleft4" type="TouchScreenButton" parent="tcbuttons"]
+position = Vector2(736, 407)
+scale = Vector2(4.7, 4.7)
+shape = SubResource("RectangleShape2D_u3d1m")
+action = "1tright"
+
+[node name="1btleft5" type="TouchScreenButton" parent="tcbuttons"]
+position = Vector2(635, 407)
+scale = Vector2(4.7, 4.7)
+shape = SubResource("RectangleShape2D_u3d1m")
+action = "1backward"
+
+[node name="1btleft6" type="TouchScreenButton" parent="tcbuttons"]
+position = Vector2(535, 407)
+scale = Vector2(4.7, 4.7)
+shape = SubResource("RectangleShape2D_u3d1m")
+action = "1tleft"
+
+[node name="1btleft7" type="TouchScreenButton" parent="tcbuttons"]
+position = Vector2(836, 304)
+scale = Vector2(4.7, 4.7)
+shape = SubResource("RectangleShape2D_u3d1m")
+action = "1fire"
 
 [connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]
 [connection signal="timeout" from="fire_cooldown" to="." method="_on_fire_cooldown_timeout"]
