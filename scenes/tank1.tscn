@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d20rkomgxxlq8"]
+[gd_scene load_steps=17 format=3 uid="uid://d20rkomgxxlq8"]
 
 [ext_resource type="Script" path="res://scripts/tank_1.gd" id="1_fy6a5"]
 [ext_resource type="Texture2D" uid="uid://dwm57ny557t0t" path="res://icon.svg" id="2_oflka"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://16fgxqtcfuie" path="res://assets/heart_7.png" id="5_ul8e2"]
 [ext_resource type="Texture2D" uid="uid://71hoynnnkhay" path="res://assets/BulletIcon_1.png" id="6_5xwc7"]
 [ext_resource type="Texture2D" uid="uid://btwa2tfgepbrc" path="res://assets/boom.png" id="7_2mttl"]
+[ext_resource type="Texture2D" uid="uid://cppy6iwrr2p0d" path="res://assets/shield.png" id="8_shx28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su32n"]
 size = Vector2(97, 93)
@@ -152,6 +153,11 @@ libraries = {
 visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_2mttl")
+
+[node name="shield" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.25098)
+texture = ExtResource("8_shx28")
 
 [connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]
 [connection signal="timeout" from="fire_cooldown" to="." method="_on_fire_cooldown_timeout"]

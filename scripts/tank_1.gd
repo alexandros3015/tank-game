@@ -18,6 +18,7 @@ const JUMP_VELOCITY = -400.0
 var dead = false
 var canmove = true
 var canshoot = true
+var canhurt = true
 
 const BULLET = preload("res://scenes/bullet.tscn")
 
@@ -75,8 +76,9 @@ func _physics_process(delta: float) -> void:
 		
 		
 func hurt() -> void:
-	print("Tank got hit")
-	hp -= 1
+	if canhurt:
+		print("Tank got hit")
+		hp -= 1
 
 func _on_bullet_cooldown_timeout() -> void:
 	if bullets < 15:
@@ -99,3 +101,18 @@ func explode() -> void:
 func _on_dead_anim_animation_finished(anim_name: StringName) -> void:
 	visible = false
 	position = Vector2(999, 999)
+	
+
+func get_powerup(powerup: Global.POWERUP) -> void:
+	match powerup:
+		Global.POWERUP.SHIELD:
+			
+			canhurt = false
+			$shield.visible = true
+			await get_tree().create_timer(5, false).timeout
+			canhurt = true
+			$shield.visible = false
+		
+		Global.POWERUP.SPEED:
+			
+			pass

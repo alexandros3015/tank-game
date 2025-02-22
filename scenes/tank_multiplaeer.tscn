@@ -231,9 +231,9 @@ visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_5apik")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="mobile_controls" type="CanvasLayer" parent="."]
 
-[node name="1btleft" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="1btleft" type="TouchScreenButton" parent="mobile_controls"]
 position = Vector2(80, 1048)
 rotation = -1.5708
 scale = Vector2(0.887596, 1.56299)
@@ -242,7 +242,7 @@ shape = SubResource("RectangleShape2D_tgkbk")
 action = "1tbleft"
 visibility_mode = 1
 
-[node name="1btleft2" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="1btleft2" type="TouchScreenButton" parent="mobile_controls"]
 position = Vector2(1561, 729)
 scale = Vector2(0.825, 1.46429)
 texture_normal = ExtResource("8_f7afh")
@@ -251,7 +251,7 @@ shape = SubResource("RectangleShape2D_6s2su")
 action = "1forward"
 visibility_mode = 1
 
-[node name="1btleft3" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="1btleft3" type="TouchScreenButton" parent="mobile_controls"]
 position = Vector2(421, 871.286)
 rotation = 1.5708
 scale = Vector2(0.902073, 1.46946)
@@ -260,7 +260,7 @@ shape = SubResource("RectangleShape2D_j40x2")
 action = "1tbright"
 visibility_mode = 1
 
-[node name="1btleft4" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="1btleft4" type="TouchScreenButton" parent="mobile_controls"]
 position = Vector2(1880, 899)
 rotation = 1.5708
 scale = Vector2(0.769293, 1.39824)
@@ -269,7 +269,7 @@ shape = SubResource("RectangleShape2D_05trq")
 action = "1tright"
 visibility_mode = 1
 
-[node name="1btleft5" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="1btleft5" type="TouchScreenButton" parent="mobile_controls"]
 position = Vector2(1716, 1056)
 rotation = 3.14159
 scale = Vector2(0.703486, 1.3809)
@@ -278,7 +278,7 @@ shape = SubResource("RectangleShape2D_0hxjb")
 action = "1backward"
 visibility_mode = 1
 
-[node name="1btleft6" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="1btleft6" type="TouchScreenButton" parent="mobile_controls"]
 position = Vector2(1424, 1058)
 rotation = -1.5708
 scale = Vector2(0.800414, 1.20031)
@@ -287,7 +287,7 @@ shape = SubResource("RectangleShape2D_okcco")
 action = "1tleft"
 visibility_mode = 1
 
-[node name="1btleft7" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="1btleft7" type="TouchScreenButton" parent="mobile_controls"]
 position = Vector2(99, 710)
 scale = Vector2(1.57, 1.39286)
 texture_normal = ExtResource("9_eqewq")
