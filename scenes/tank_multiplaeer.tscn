@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://de7kywohp4pur"]
+[gd_scene load_steps=26 format=3 uid="uid://de7kywohp4pur"]
 
 [ext_resource type="Script" path="res://scripts/tank_multiplaeer.gd" id="1_21urb"]
 [ext_resource type="Texture2D" uid="uid://dwm57ny557t0t" path="res://icon.svg" id="2_j5g88"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://71hoynnnkhay" path="res://assets/BulletIcon_1.png" id="6_3vl04"]
 [ext_resource type="Texture2D" uid="uid://btwa2tfgepbrc" path="res://assets/boom.png" id="7_5apik"]
 [ext_resource type="Texture2D" uid="uid://doddq6nbrs6tr" path="res://assets/move_p_tank(1).png" id="8_f7afh"]
+[ext_resource type="Texture2D" uid="uid://cppynxd26bmsp" path="res://assets/shoot_button.png" id="9_eqewq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su32n"]
 size = Vector2(97, 93)
@@ -99,13 +100,26 @@ _data = {
 "dead_anim": SubResource("Animation_iqqcb")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3d1m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgkbk"]
+size = Vector2(149.56, 82.185)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6s2su"]
 size = Vector2(167.44, 91.755)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j40x2"]
+size = Vector2(152.77, 80.755)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05trq"]
+size = Vector2(159.7, 95.735)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hxjb"]
 size = Vector2(168.165, 86.08)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okcco"]
+size = Vector2(142.925, 91.095)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k81ym"]
+size = Vector2(153.405, 80.57)
 
 [node name="tank1" type="CharacterBody2D" groups=["tank"]]
 script = ExtResource("1_21urb")
@@ -217,53 +231,69 @@ visible = false
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_5apik")
 
-[node name="tcbuttons" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="1btleft" type="TouchScreenButton" parent="tcbuttons"]
-position = Vector2(535, 304)
-scale = Vector2(4.7, 4.7)
-shape = SubResource("RectangleShape2D_u3d1m")
+[node name="1btleft" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(80, 1048)
+rotation = -1.5708
+scale = Vector2(0.887596, 1.56299)
+texture_normal = ExtResource("8_f7afh")
+shape = SubResource("RectangleShape2D_tgkbk")
 action = "1tbleft"
+visibility_mode = 1
 
-[node name="1btleft2" type="TouchScreenButton" parent="tcbuttons"]
-position = Vector2(592, 260)
-scale = Vector2(0.425, 0.803571)
+[node name="1btleft2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1561, 729)
+scale = Vector2(0.825, 1.46429)
 texture_normal = ExtResource("8_f7afh")
 texture_pressed = ExtResource("8_f7afh")
 shape = SubResource("RectangleShape2D_6s2su")
 action = "1forward"
+visibility_mode = 1
 
-[node name="1btleft3" type="TouchScreenButton" parent="tcbuttons"]
-position = Vector2(736, 304)
-scale = Vector2(4.7, 4.7)
-shape = SubResource("RectangleShape2D_u3d1m")
+[node name="1btleft3" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(421, 871.286)
+rotation = 1.5708
+scale = Vector2(0.902073, 1.46946)
+texture_normal = ExtResource("8_f7afh")
+shape = SubResource("RectangleShape2D_j40x2")
 action = "1tbright"
+visibility_mode = 1
 
-[node name="1btleft4" type="TouchScreenButton" parent="tcbuttons"]
-position = Vector2(736, 407)
-scale = Vector2(4.7, 4.7)
-shape = SubResource("RectangleShape2D_u3d1m")
+[node name="1btleft4" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1880, 899)
+rotation = 1.5708
+scale = Vector2(0.769293, 1.39824)
+texture_normal = ExtResource("8_f7afh")
+shape = SubResource("RectangleShape2D_05trq")
 action = "1tright"
+visibility_mode = 1
 
-[node name="1btleft5" type="TouchScreenButton" parent="tcbuttons"]
-position = Vector2(677, 447)
+[node name="1btleft5" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1716, 1056)
 rotation = 3.14159
-scale = Vector2(0.441567, 0.753566)
+scale = Vector2(0.703486, 1.3809)
 texture_normal = ExtResource("8_f7afh")
 shape = SubResource("RectangleShape2D_0hxjb")
 action = "1backward"
+visibility_mode = 1
 
-[node name="1btleft6" type="TouchScreenButton" parent="tcbuttons"]
-position = Vector2(535, 407)
-scale = Vector2(4.7, 4.7)
-shape = SubResource("RectangleShape2D_u3d1m")
+[node name="1btleft6" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1424, 1058)
+rotation = -1.5708
+scale = Vector2(0.800414, 1.20031)
+texture_normal = ExtResource("8_f7afh")
+shape = SubResource("RectangleShape2D_okcco")
 action = "1tleft"
+visibility_mode = 1
 
-[node name="1btleft7" type="TouchScreenButton" parent="tcbuttons"]
-position = Vector2(836, 304)
-scale = Vector2(4.7, 4.7)
-shape = SubResource("RectangleShape2D_u3d1m")
+[node name="1btleft7" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(99, 710)
+scale = Vector2(1.57, 1.39286)
+texture_normal = ExtResource("9_eqewq")
+shape = SubResource("RectangleShape2D_k81ym")
 action = "1fire"
+visibility_mode = 1
 
 [connection signal="timeout" from="bullet_cooldown" to="." method="_on_bullet_cooldown_timeout"]
 [connection signal="timeout" from="fire_cooldown" to="." method="_on_fire_cooldown_timeout"]
